@@ -1,5 +1,27 @@
 package body Hnumerics.Generic_Dual_Types is
 
+   function Re (X : Dual) return Real'Base is
+   begin
+      return X.Re;
+   end Re;
+
+   function Du (X : Dual) return Real'Base is
+   begin
+      return X.Du;
+   end Du;
+
+   procedure Set_Re (X  : in out Dual;
+                     Re :        Real'Base) is
+   begin
+      X.Re := Re;
+   end Set_Re;
+
+   procedure Set_Du (X  : in out Dual;
+                     Du :        Real'Base) is
+   begin
+      X.Du := Du;
+   end Set_Du;
+
    function Compose_From_Cartesian (Re, Du : Real'Base) return Dual is
    begin
       return (Re => Re, Du => Du);

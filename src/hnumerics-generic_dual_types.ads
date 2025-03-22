@@ -10,6 +10,14 @@ package Hnumerics.Generic_Dual_Types is
 
    Epsilon : constant Dual;
 
+   function Re (X : Dual) return Real'Base;
+   function Du (X : Dual) return Real'Base;
+
+   procedure Set_Re (X  : in out Dual;
+                     Re :        Real'Base);
+   procedure Set_Du (X  : in out Dual;
+                     Du :        Real'Base);
+
    function Compose_From_Cartesian (Re, Du : Real'Base) return Dual;
    function Compose_From_Cartesian (Re     : Real'Base) return Dual;
 
